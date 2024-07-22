@@ -32,9 +32,14 @@ fn main() {
     match unit {
         "-c" => println!("{}",convert_c(temp)),
         "-f" => println!("{}", convert_f(temp)),
-        _ => println!("use -f or -c"),
+        "-k" => println!("{}", convert_k(temp)),
+        _ => println!("use -f or -c or -k"),
     };
     }
+}
+
+fn convert_k(num:f32) -> f32{ 
+    return num;
 }
 
 fn convert_c(num:f32) -> f32{
