@@ -28,6 +28,7 @@ enum UsState {
     Alaska
 }
 
+#[derive(Debug)]
 enum Coin {
     Penny,
     Nickel, 
@@ -72,17 +73,31 @@ fn dice_roll (roll:i32) {
     }
 }
 
+enum Color {
+    RGB(u8, u8,u8),
+    RGBA(u8,u8,u8,u8)
+}
 
 fn main() {
    
    // chapter 6.3
-   let config_max: Option<u8> = Some(9);
-   if let Some(max) = config_max {
-    println!("The maximum value is set to {max}");
-   }
-   if let Some(8) = config_max  {
-       println!("The max value we got is is 8");
-   }
+
+    let mut color = Color::RGBA(255, 0, 155, 0);
+    if let Color::RGBA(r,g ,b ,a ) = color {
+        println!("Red: {}, Green: {}, Blue: {}, Alpha: {}", r,g,b,a);
+    }
+    let mut coin = Coin::Dime;
+    if let coin = Coin::Dime {
+        println!("Coin is {:#?}", coin);
+    }
+
+    let maybe_number = Option::<u8>::None;
+    if let Some(x) = maybe_number {
+        println!("The number is : {}", x);
+    } else {
+        println!("Not a number");
+    }
+   
     //catch all Patterns and the _Placeholder
     dice_roll(3);
     dice_roll(7);

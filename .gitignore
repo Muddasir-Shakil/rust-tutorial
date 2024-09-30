@@ -1,3 +1,5 @@
 ownership/target/
 rectangles/target/
 temperature_convertor/target/
+enums/target/.rustc_info.json
+*/target

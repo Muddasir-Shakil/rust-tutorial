@@ -5,6 +5,7 @@ fn main() {
 
     let rect1 = (30, 50);
     println!("{}", area_tup(rect1));
+    dbg!(&rect1);
     
     let rect2 = Rectangle {
         h: 32,
